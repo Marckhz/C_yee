@@ -2,39 +2,32 @@
 #include <stdlib.h>
 
 
-int foo(){
 
-	//stack overflow?	
-	int c;
-	c = 1+1;
-	printf("%d\n", c);
+int recursivo(int n){
 
-	return foo();
-
+	if(n==0){
+		return 1;
+	}else{
+		return recursivo(9);
+	}	
 }
+
+
+
+
 int main(int argc, char const *argv[])
 {
-	foo();
-	return 0;
+	recursivo(5);
+	
 }
 
-
+/*
 int main(int argc, char const *argv[])
 {
 	
 	//memory leak?
 
-	int *ptr;	
-	//ask memory
-	int i =0;
-	while(i <= 100000000000000000000000000){
-		ptr = (int *)malloc(500* sizeof(int));
-		i++;
-	}
-	ptr[35] = 100+1;
-	printf("%d\n", ptr);
-
-	//printf("\n");
+	int * ptr = (int *) malloc(10000000000) * sizeof(int) )int *ptr = (int *) mallo;
 }
 
-
+*/
